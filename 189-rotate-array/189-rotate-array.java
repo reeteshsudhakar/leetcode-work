@@ -5,14 +5,12 @@ class Solution {
             return;
         }
         
-        Map<Integer, Integer> placementMap = new HashMap<>();
+        int[] newNums = nums.clone();
         
         for (int i = 0; i < nums.length; i++) {
-            placementMap.put((i + k) % nums.length, nums[i]);
+            nums[(i + k) % nums.length] = newNums[i];
         }
         
-        for (Map.Entry<Integer, Integer> entry : placementMap.entrySet()) {
-            nums[entry.getKey()] = entry.getValue(); 
-        }
+        
     }
 }
