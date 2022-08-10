@@ -12,11 +12,7 @@ public class Solution extends VersionControl {
         
         int firstFail = n;
         
-        while (start <= end) {
-            if (isBadVersion(end) && end < firstFail) {
-                firstFail = end;
-            }
-            
+        while (start <= end) {            
             int mid = start + (end - start) / 2;
             if (isBadVersion(mid)) {
                 if (mid < firstFail) {
