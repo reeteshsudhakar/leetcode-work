@@ -11,6 +11,10 @@
  */
 public class Solution {
     public ListNode detectCycle(ListNode head) {
+        if (head == null) {
+            return null;
+        }
+        
         HashSet<ListNode> set = new HashSet<>();
         
         while (head != null) {
