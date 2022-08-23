@@ -5,11 +5,11 @@ class Solution {
         
         for (int i = 0; i < nums.length; i++) {
             if (enumeration.containsKey(target - nums[i])) {
-                result[0] = enumeration.get(target - nums[i]);
-                result[1] = i;
+                result[0] = i;
+                result[1] = enumeration.get(target - nums[i]);
             }
+            
             enumeration.put(nums[i], i);
-
         }
         
         return result;
