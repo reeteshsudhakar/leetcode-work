@@ -6,12 +6,16 @@
 #         self.right = right
 class Solution:
     def removeLeafNodes(self, root: Optional[TreeNode], target: int) -> Optional[TreeNode]:
-        if root is None:
+        # base case - node is null
+        if root is None: 
             return None
         
-        root.left = self.removeLeafNodes(root.left, target)
+        # traversal - post-order to ensure we process children before parent
+        root.left = self.removeLeafNodes(root.left, target) 
         root.right = self.removeLeafNodes(root.right, target)
         
+        # if leaf node and is target, return null to delete it (traversal reassigns values)
+        # if not a leaf or isn't the target value, we just return the node to not mess anything up
         if root.left is None and root.right is None and root.val == target:
             return None
         
