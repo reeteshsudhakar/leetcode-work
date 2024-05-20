@@ -6,11 +6,12 @@ class Solution(object):
         :rtype: List[int]
         """
         
-        d = {}
+        d = dict()
         
-        for idx, value in enumerate(nums):
-            if target - value in d: 
-                return [idx, d[target - value]]
-            d[value] = idx
+        for i, num in enumerate(nums):
+            if target - num in d:
+                return [i, d[target - num]]
+            
+            d[num] = i
             
         
