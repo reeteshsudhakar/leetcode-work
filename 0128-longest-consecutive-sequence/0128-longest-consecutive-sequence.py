@@ -6,9 +6,10 @@ class Solution:
         
         for num in nums:
             if num - 1 not in nums:
-                count = 1
-                while num + count in nums:
-                    count += 1
-                longest = max(count, longest)
+                seq = 1
+                while num + seq in nums:
+                    seq += 1
                 
+                longest = max(longest, seq)
+        
         return longest
