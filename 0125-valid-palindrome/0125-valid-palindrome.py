@@ -1,10 +1,8 @@
-class Solution(object):
-    def isPalindrome(self, s):
-        """
-        :type s: str
-        :rtype: bool
-        """
-        string = "".join([char.lower() for char in s if char.isalnum()])
-        print(string)
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        ret = ''
         
-        return string == string[::-1]
+        for i in range(len(s)):
+            if s[i].isalnum(): ret += s[i].lower()
+        
+        return ret == ret[::-1]
