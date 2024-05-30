@@ -9,15 +9,13 @@ class Solution(object):
         low = 0
         high = len(numbers) - 1
         
-        while low < high: 
-            temp = numbers[low] + numbers[high]
-            
-            if temp == target: 
+        while low < high:
+            temp = numbers[low] + numbers[high] 
+            if temp == target:
                 return [low + 1, high + 1]
             
-            if temp < target: 
-                low += 1
-            else: 
+            if temp > target:
                 high -= 1
-            
+            if temp < target:
+                low += 1
         
