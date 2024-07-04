@@ -10,20 +10,21 @@ class Solution(object):
         :rtype: Optional[ListNode]
         """
         
-        temp = head.next
-        curr = temp
+        temp = head.next # find first node that isn't 0
+        curr = temp # make a copy for traversing
         
         while curr:
-            counter = 0
+            sum_val = 0 # sum of values for merge
             
             while curr.val != 0:
-                counter += curr.val
+                sum_val += curr.val
                 curr = curr.next
             
-            temp.val = counter
+            temp.val = sum_val
             curr = curr.next
             temp.next = curr
-            temp = temp.next
+            temp = curr
         
         return head.next
+            
             
